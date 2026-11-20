@@ -1,0 +1,16 @@
+{
+  "name": "顔プレート トリミング",
+  "short_name": "顔プレート",
+  "description": "写真を取り込んで、顔プレート用のサイズにトリミングするツール",
+  "lang": "ja",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f2ee",
+  "theme_color": "#c2410c",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

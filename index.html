@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#c2410c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="顔プレート">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<title>顔プレート トリミング</title>
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAM50lEQVR4Xu1beXBV1Rn/nXOXt2YDElaXKijgiFKc6ggliUBF64yOLSo60ylt7ajtFGs7w5SOQlyoba2lFQVBO9XauqTVlraWBgUSggtIERBEBMMOkpCFvP3ee07nO/e9kOURkvDu8w/9Zd7kLfee832/853vfOc73wW+wBf4XIOdpfZsAcAumXXW7QwIO6ohqwAJ95U/vDIL2tpy6PnrsXeQLCTTQOTplwXIBeALq4AqQFBn9Pl/dcXnpHRnWMoWoYEIMFD4NB6TFj92sKzt4C3VcJQ8AMMCMFblytcX9JkAYjjT0VszSiZrnN3uSFEpBC4wOHycAVJIQDgAo2ZzbZXUgQTjHOAc1JUlkOQMDbrO13Ip/3LFqpZ6UrqzrGdCnwjINFg3JTTB59cWCTv1dT2RQNIGUkKZg6Q/zcehBUMuER6AcQYnHoWTEDTWjAPM5IBPBxy/H9DM/8Rte35lbez9vpJwRgLkLGisGs76yvD3TY0v1qxEwBl5sRz5jXscrhscnMYejGs6mjfW4Pjqv0ILBgGprDJ3YBqcWAyl027G4KtmQji2snophJS2JY68toyzgx9yYfoTli3um7I2sjQje29C9OrIyLmwati1leH7Cwz2YEQwRGMpZ8iwc7WRN9+l2+0tEMkE7OhJogDtu9+H1ZyAdJI5twIafbtNwigqRcElV9F8gxYqZNz0MaNwEG95ZxUaP9rqmEbAV2Cwp+oqwmWsOlJFOlTWQrGVDaclgEyoshr22vLwncUGe/CkJW3JoTEOTVopSMfG1rnXom3bJpRO+Rq0UAGZJUZ+81YP5n8GDFbzIex7+mdwYu1orK9B4fiJmPSHjZB2isZAExKSZC0y2cLa8vCn5bWRZb1Nh6wEkHdHFUTdNeHxBvBExJKOADSac0oUxsA0XTm8i+57FKNunwcgCYDnzuR7BTl5H468/BiO/OsFVxbleJWAjGQlmU0dv99QHqqfXB3dQTplWx1OawHkc+skHvfpzBexpU0NnxoI1yMbg4airPImwGmHTMQ7hPActBr4AiituBFN77yhZOkiHsBsCYQ5MyIciwFM73JBJ/QYMjIXYqquouBKH8e17ZYkursSpfyvawU0HVyXrOX1Rf1T34ynR5+Wx05gTFmBCGhs2obKgqtJp2zBUg8CSo9nzFx826cxaqgjqJBCgPsDiOzZii13lyO+f5f6rBblfINk8QUQP7QHW+4qR2TXZiULydjhMRiEwWk9EnPouw7dOqH7FGDkMclzSolrEo5SrBNJFIjosCOtaN1cB1/ZcHcEch709AUS4LqKC6Kf1EELB7PJwpOOZJCofG8SjCtqYaWnQseIdbEA2thQ1yb3j2SMnW+5ZHaLFVwS9FBImfxno3wGbmSoZCFH2HMgmNKBsfPixUXn0F0qXD6dD8js6qRjjDA4TBXh9SDAbUZSyNuzwz6BzJQCGfrf+f1AoWRRjrAHGAXnJocO2xlBv1Z327lmXQUcTQRM5emJ4jNHi/0BCcuCYTD43KWThoS572Uskraq3IF40RhDkjvBbK3mb0sriU2ABUtw5ION2Pz6Kzi6Z5eyomEXjsWk62dh5KVXQcbbXMbT67rXyBsBNBW5P4TVTz2E1St+jWQ8Dk13u99RV4P1L67A9O/dh2vv+TlEMpa3kCovBJDZ82AJap5YgJWLF6FwSDHMQBAivWRx2t46Dv7520cgbQsz730YMtaa8+mQDZ7HroLmfKAQDe++gVVP/wqFpSVKDsc+5QTpPaGodBD+u+I32PtWDVigSN3rNTwnwPWhEmueWwJJISxFcFk8tvqOYlgGrHl+idrt5dj/5t8ClMI+P9oO7kHD1nfhC4aUqZ8O9JsZCGHf1k1oObAbjCK77MtbzuCpBaiwVPPh6N6PEGtrhaaCld5B18TbW90VgptdQlsv4CkBLjgizU1uBueM+Sc37CJLiDQ35mV7nQcCAK4yCX3R/hSYNqAsd7/hLQFKZwdFZSOg60af5jPNeU03UFxGkStlmPutU7/gKQGM8gZ2AsPHjEfBkKFwLKt3S2AMjm2hYHAZRlw0Xt2r2vAQnrZOS55IJhEsPQfjJ09HIhrp1RGSA0xGIhg7eRpCQ89X91IbXsJTApRPo3XfTuKaOXMRLh4EK5kAzzK/6TsrlUSgqBjT5twLON4r77poj6FOcpIxDL5gPG554HewknGk4jHQOULnF31nxaO49f7FKB19KWQy5t7rMc68MOcA5NFFrBWXXX8r7gwE8ffH5uPTht0dZweU8y87fwxu+skjGD/tRohYC7hKtniPvBCgTI1raoMzrvIGXDjpauza8AaOfrxThcnDR4/H2MnTYRYNUdfkS3lC3ghQ/kCR0AbT78eE627DhOsyJi6AVCRvO8DOyCsBHSQ4NkTkREdcQI6SnKCbY8wv8kYABTi0NyBlma5D8wUoRHS1pW2vbUHSFjl9BO718peB9wRIqfb13PSDGVRDYSPVegLtJ44jQYeqAPyhAhX8mMVDwEgkKwqRSri+wOM4wFMCVAKUlrtACaKNB7B97Qv4sL5GOb9o6wlYSTpPBAzTh1DJYAwbPQ7jpszAhMobECo7F0i2qUNYL6eGZwTQ7o8HC2An4qhdvggbXn4GzYf3g2kchukHp2lgGIoAx7HReuwwmg7sxbbVK1Gz/NeYPOu7qPjWD6AHwhCxdhUzeAFPWlXKh0pw7KNteOmBu9Hw/ib4wyE1yio7LIWbxk8nOyje100Ths+vTD7WegIrH1+AbW+uxOyHlmL42Mshoi2ekJDzUCujfMPGdVgyZyYO7NiCgsFD1A6PfiN/4GZ5Oh9kECmur6Br6NrCIUNweNdWLJlzHfa+86YiNF0VklPklAA3+1uIIzvewzNzb0MyHkWgoEjt8PqT2qJr6R5/uAhWIo5n587G4e0bVdvuiVTukDMClIKageTJVrww/0618zP9wbMaNRpxwx9Q+wTVZlszoJv9IvNMyB0B5PF9hVi9/Jc4tGsHAuHCs1I+AyLBHy7E4d0fombZo2BmOKd5wqwEaJzH1ZF/X/PSkuoGQmhu2I63/vY8QoWFHbn+XICmQ6ioCG+/9ic07dkKHgj2uSaBwgghJbjgsWyydCGAam/pIs1OHU0KWOmaoCzHrlQRcupWlf3VA9i48iVEW5vBdVresp7WDhi0DFJmeePKFwGN0uWdCiGULFkTJ5IBPCVgM86PUuez0jpm0IWAdOExEkgeYpD7DPfXbpowSGHDjsZcxek8Q9ch4q3Yub4Ghs/XRbhcgfqiTdTO+tVwYi2qTwUh0rLQ6VIPEiTpIKQ84D958gBdrs68O6H7FJCd6urWUIkMdXHqeld5PVSE4omToQXD7jzXA2javxeNB/aqtbxzmUquQCOumz40HWxA076PVZ9qyQ2ElCx6uFjJ1o0E4dOYZAxrr9gMK13g3SsBaCxzLxCcP5dyaH0+RRKZmkjEER5zGSY+XY/geRfDiUcomFWCUbaHApru2Z5cfaa27WQCjQc+UX0KWmZHXYiJy+tRMPbLSrYuWSSpKkQYE+yPpFNGt87oEQlSQbRbU9f+dm1FeHWBwWa0W9KhqquOG2nJo5fjgBmmek+j33osBSfVCLeKNfegaLi9GaovVSpnpE+OSJZuhVoUSoQNRpVia8trI/XpOsEeQURvoTDzM/njhMAWnYHbUA7FnWTqIJMh1XwcTev/jVGzL8Hoq6dh9i90mAFvpoCav5wjFU9gzJVTVf9N9a8jdeJYj+p0Gh6avZaQtsnlvXRv9c7sXjIrAZmauiuroztqy8M/KvaxpapUFsoK6HhX7dJIiN2PzUPLpjXwl5RhdDAI1uZtUoPijfirH2D7s1VorFuFwnGXu7Kk9xWkPAPsQoMZLSnxw/J10W39LpUl0FQgp0G1tnUV4aFUe3uS9jACDjNMjba5ExavgkjEVLE0OY7Dry7FvmVPwijypFgcVhtw3nfuxqg75qnhvGjeclUxSrIwihBJNoCT8q0p8XD5uuiTyqlXD6BYmkA1g27JeaSqriLc6NPl4/6g6Ut8elAc+ccKocrlNY0xKqXSKN/XDn+p37Nyec2MQcbbEd2zVfkfqgCUjqPK5ePH9vOCoKkJJlNtlvjp1HXRJzIF3715oz4du2RMaN3U4ES/qS2Cbc3UEgkkbPXURpcHJmhZOk3J2tmDTpoS7gMTFOHRaNM676e6bfXAhFGTEs78r66Nbc7ZAxMZdG7w3RnFU8H5HY4QFULiSyaHoR6ZUd6YHG2feB0AyPlS8pQpp58SsDSOBo3xWjDx56+saq2lRvuqvHKs/ZEiXUZPTkbFCjS/QnrRubbjDHe4DApJP3kPzpjUNBYzbX5skji5n6UfiBjIQ1MDAjFMvmFAN3sAkiUvj811BzG+8DN+cHKhu+zlduf1Bb7A5wf/B3/m8nDK30CaAAAAAElFTkSuQmCC">
+<style>
+  :root{
+    --bg:#f4f2ee; --panel:#ffffff; --ink:#1d1d1b; --sub:#6b6862; --line:#e2ded6;
+    --accent:#c2410c; --accent-ink:#fff; --stage:#2a2926;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#171614; --panel:#22211e; --ink:#f2efe9; --sub:#a39e94; --line:#36342f; --stage:#0e0d0c; }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
+    font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic UI",system-ui,sans-serif;font-size:14px}
+  .app{display:grid;grid-template-columns:1fr 300px;grid-template-rows:auto 1fr auto;height:100%;}
+  header{grid-column:1/3;display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--panel)}
+  header h1{font-size:15px;margin:0;font-weight:700;letter-spacing:.02em}
+  header .hint{color:var(--sub);font-size:12px}
+  .stageWrap{position:relative;background:var(--stage);overflow:hidden;touch-action:none;min-height:300px}
+  canvas#stage{position:absolute;inset:0;width:100%;height:100%;cursor:grab}
+  canvas#stage.drag{cursor:grabbing}
+  .empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#d9d4ca;text-align:center;padding:24px}
+  .empty.hidden{display:none}
+  .empty .big{font-size:17px;font-weight:700}
+  .empty small{color:#9b968c}
+  .stageWrap.over::after{content:"ここにドロップ";position:absolute;inset:12px;border:2px dashed #f59e0b;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fde68a;font-size:18px;font-weight:700;background:rgba(0,0,0,.35)}
+  aside{background:var(--panel);border-left:1px solid var(--line);overflow:auto;padding:14px;display:flex;flex-direction:column;gap:16px}
+  .sec h2{font-size:12px;color:var(--sub);font-weight:700;margin:0 0 8px;letter-spacing:.05em}
+  label.row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:6px 0}
+  select,input[type=number],input[type=color]{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px}
+  input[type=number]{width:74px}
+  input[type=range]{width:100%;accent-color:var(--accent)}
+  .seg{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+  .seg button{flex:1;border:0;background:transparent;color:var(--ink);padding:7px 0;font:inherit;cursor:pointer}
+  .seg button.on{background:var(--accent);color:var(--accent-ink)}
+  .btn{font:inherit;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:9px;padding:8px 12px;cursor:pointer}
+  .btn:hover{border-color:var(--sub)}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:700}
+  .btn:disabled{opacity:.45;cursor:default}
+  .btns{display:flex;gap:8px;flex-wrap:wrap}
+  .btns .btn{flex:1}
+  .muted{color:var(--sub);font-size:12px;line-height:1.5}
+  footer{grid-column:1/3;border-top:1px solid var(--line);background:var(--panel);padding:8px 10px;display:flex;gap:8px;overflow-x:auto;align-items:center;min-height:76px}
+  .thumb{position:relative;flex:none;width:56px;height:56px;border-radius:8px;overflow:hidden;border:2px solid transparent;cursor:pointer;background:#000}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .thumb.on{border-color:var(--accent)}
+  .thumb .x{position:absolute;top:1px;right:1px;width:18px;height:18px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:11px;line-height:18px;padding:0;cursor:pointer}
+  .thumb .nm{position:absolute;left:0;right:0;top:0;background:rgba(0,0,0,.55);color:#fff;font-size:9px;line-height:13px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 2px}
+  .fnPreview{font-family:ui-monospace,Menlo,monospace;font-size:12px;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;word-break:break-all}
+  input[type=text]{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;width:150px}
+  .thumb .done{position:absolute;left:2px;bottom:2px;background:#16a34a;color:#fff;font-size:10px;border-radius:4px;padding:0 4px}
+  .addThumb{flex:none;width:56px;height:56px;border-radius:8px;border:1.5px dashed var(--line);display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:22px;cursor:pointer;background:transparent}
+  .toast{position:fixed;left:50%;bottom:92px;transform:translateX(-50%);background:#1d1d1b;color:#fff;padding:8px 14px;border-radius:10px;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:20}
+  .toast.show{opacity:.95}
+  .modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:30;padding:20px}
+  .modal.show{display:flex}
+  .modal .box{background:var(--panel);border-radius:14px;padding:16px;max-width:420px;width:100%;text-align:center}
+  .modal img{max-width:100%;max-height:60vh;background:repeating-conic-gradient(#ddd 0 25%,#fff 0 50%) 0 0/16px 16px;border-radius:6px}
+  .zoomRow{display:flex;align-items:center;gap:8px}
+  .zoomRow .btn{padding:4px 10px}
+  header{padding-top:max(10px, env(safe-area-inset-top))}
+  header, footer, aside{padding-left:max(14px, env(safe-area-inset-left)); padding-right:max(14px, env(safe-area-inset-right))}
+  body{-webkit-tap-highlight-color:transparent; touch-action:manipulation}
+  .shareBox .btn{width:100%;margin-top:8px}
+  @media (max-width:760px){
+    html,body{height:auto}
+    .app{height:auto;min-height:100%;grid-template-columns:1fr;grid-template-rows:auto minmax(320px,58vh) auto auto}
+    aside{padding-bottom:max(20px, env(safe-area-inset-bottom))}
+    input[type=text],input[type=number],select{font-size:16px}  /* stops iPhone from zooming in on focus */
+    header{grid-column:1}
+    header .hint{display:none}
+    aside{border-left:0;border-top:1px solid var(--line);order:3}
+    footer{grid-column:1;order:2}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>顔プレート トリミング</h1>
+    <span class="hint">ドラッグで移動 ・ ホイール／ピンチで拡大縮小 ・ ←↑→↓ と +／− でも調整</span>
+  </header>
+
+  <div class="stageWrap" id="stageWrap">
+    <canvas id="stage"></canvas>
+    <div class="empty" id="empty">
+      <div class="big">写真を取り込んでください</div>
+      <button class="btn primary" id="pickBtn">写真を選ぶ</button>
+      <small>ドラッグ＆ドロップ、貼り付け（Ctrl/⌘+V）、複数枚まとめてもOK</small>
+    </div>
+  </div>
+
+  <aside>
+    <div class="sec">
+      <h2>プレートのサイズ</h2>
+      <label class="row">プリセット
+        <select id="preset">
+          <option value="30x40">30×40mm（3:4）</option>
+          <option value="24x30">24×30mm（4:5）</option>
+          <option value="35x45">35×45mm（証明写真）</option>
+          <option value="40x40" selected>40×40mm（正方形）</option>
+          <option value="44x44c">Ø44mm 円形</option>
+          <option value="57x57c">Ø57mm 円形</option>
+          <option value="custom">カスタム</option>
+        </select>
+      </label>
+      <label class="row">幅 (mm)<input type="number" id="wmm" min="5" max="500" step="1" value="40"></label>
+      <label class="row">高さ (mm)<input type="number" id="hmm" min="5" max="500" step="1" value="40"></label>
+      <label class="row">解像度 (dpi)
+        <select id="dpi"><option>150</option><option>200</option><option selected>300</option><option>350</option><option>600</option></select>
+      </label>
+      <div class="muted" id="pxInfo"></div>
+    </div>
+
+    <div class="sec">
+      <h2>写す範囲</h2>
+      <div class="seg" id="cropSeg">
+        <button data-v="neck" class="on">首から上</button>
+        <button data-v="shoulder">肩から上</button>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h2>形</h2>
+      <div class="seg" id="shapeSeg">
+        <button data-v="rect" class="on">四角</button>
+        <button data-v="round">角丸</button>
+        <button data-v="circle">円</button>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h2>位置あわせ</h2>
+      <div class="btns" style="margin-bottom:8px">
+        <button class="btn" id="autoBtn" title="顔を検出して、選んだ範囲が収まるように自動配置">顔を自動検出</button>
+        <button class="btn" id="resetBtn">全体表示に戻す</button>
+      </div>
+      <div class="muted" id="autoNote" style="margin-bottom:8px"></div>
+      <div class="muted" style="margin-bottom:4px">拡大</div>
+      <div class="zoomRow">
+        <button class="btn" id="zOut">−</button>
+        <input type="range" id="zoom" min="0" max="1000" value="0">
+        <button class="btn" id="zIn">＋</button>
+      </div>
+      <div class="muted" style="margin:10px 0 4px">傾き補正 <span id="rotVal">0°</span></div>
+      <input type="range" id="rot" min="-20" max="20" step="0.5" value="0">
+      <label class="row" style="margin-top:10px">ガイド線を表示<input type="checkbox" id="guides" checked></label>
+      <div class="muted"><span id="guideNote">ガイド：上の線＝頭のてっぺん、楕円＝頭と顔、下の2本＝首。</span></div>
+    </div>
+
+    <div class="sec">
+      <h2>ファイル名</h2>
+      <label class="row">人物名<input type="text" id="person" placeholder="例：山田太郎" disabled></label>
+      <label class="row">年<input type="number" id="year" min="1900" max="2100" step="1" disabled></label>
+      <div class="muted" id="yearNote" style="margin-bottom:6px"></div>
+      <div class="fnPreview" id="fnPreview">—</div>
+      <div class="muted" style="margin-top:6px">名前を入れて Return キーを押すと、次の写真に進みます。</div>
+    </div>
+
+    <div class="sec">
+      <h2>書き出し</h2>
+      <label class="row">形式
+        <select id="fmt"><option value="png">PNG</option><option value="jpg">JPEG</option></select>
+      </label>
+      <label class="row">余白・背景色<input type="color" id="bg" value="#ffffff"></label>
+      <div class="btns" style="margin-top:8px">
+        <button class="btn primary" id="saveBtn" disabled>この写真を保存</button>
+      </div>
+      <div class="btns" style="margin-top:8px">
+        <button class="btn" id="saveAllBtn" disabled>全部まとめて保存（ZIP）</button>
+      </div>
+      <div class="muted" id="saveNote" style="margin-top:8px"></div>
+    </div>
+  </aside>
+
+  <footer id="strip">
+    <button class="addThumb" id="addBtn" title="写真を追加">＋</button>
+  </footer>
+</div>
+
+<input type="file" id="file" accept="image/*,.heic,.heif" multiple hidden>
+<div class="toast" id="toast"></div>
+<div class="modal" id="shareModal"><div class="box shareBox">
+  <p id="shareMsg" style="margin:4px 0 8px;font-weight:700"></p>
+  <button class="btn primary" id="shareGo">写真・ファイルに保存…</button>
+  <button class="btn" id="shareCancel">やめる</button>
+  <p class="muted" style="margin-top:10px">「画像を保存」で写真アプリへ、「"ファイル"に保存」でファイル名（年-名前）つきで保存できます。</p>
+</div></div>
+<div class="modal" id="modal"><div class="box">
+  <img id="modalImg" alt="書き出した画像">
+  <p class="muted">画像を長押し、または右クリックで保存してください。</p>
+  <button class="btn" id="modalClose">閉じる</button>
+</div></div>
+
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const stage = $('stage'), ctx = stage.getContext('2d'), wrap = $('stageWrap');
+  const items = []; // {name, img, url, st:{zoom,ox,oy,rot}, done}
+  let cur = -1;
+  let shape = 'rect';
+  let cropMode = 'neck';
+  // where the head sits in the plate (fractions of plate height)
+  const FRAMING = {
+    // faceH/faceCY: detected face box (≈ forehead–chin) height & center; head top sits ~half a box above it
+    neck:     { top: 0.05, chin: 0.81, faceH: 0.50, faceCY: 0.56, rxMax: 0.36 },
+    shoulder: { top: 0.06, chin: 0.65, faceH: 0.40, faceCY: 0.45, rxMax: 0.30 }
+  };
+  let downloads = null;
+
+  // ---------- Mac app bridge (present only inside the Mac app) ----------
+  const native = !!(window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.fp);
+  const pending = new Map(); let reqId = 0;
+  window.__fpReply = (id, result) => { const p = pending.get(id); if (p){ pending.delete(id); p(result); } };
+  function callNative(cmd, payload){
+    return new Promise(res => { const id = ++reqId; pending.set(id, res);
+      window.webkit.messageHandlers.fp.postMessage(JSON.stringify(Object.assign({cmd, id}, payload || {}))); });
+  }
+  window.__fpAddImage = (name, dataUrl, year) => addSrc(name, dataUrl, year);
+  const blobToB64 = b => new Promise(res => { const r = new FileReader(); r.onload = () => res(String(r.result).split(',')[1]); r.readAsDataURL(b); });
+
+  // ---------- settings ----------
+  function outSize(){
+    const w = +$('wmm').value || 40, h = +$('hmm').value || 40, dpi = +$('dpi').value;
+    return { w: Math.round(w / 25.4 * dpi), h: Math.round(h / 25.4 * dpi), wmm:w, hmm:h, dpi };
+  }
+  const aspect = () => { const o = outSize(); return o.h / o.w; }; // frame height in frame-width units
+  function updatePxInfo(){ const o = outSize(); $('pxInfo').textContent = `書き出しサイズ：${o.w} × ${o.h} px`; }
+
+  $('preset').addEventListener('change', e => {
+    const v = e.target.value; if (v === 'custom') return;
+    const m = v.match(/(\d+)x(\d+)(c?)/);
+    $('wmm').value = m[1]; $('hmm').value = m[2];
+    setShape(m[3] ? 'circle' : (shape === 'circle' ? 'rect' : shape));
+    settingsChanged();
+  });
+  ['wmm','hmm'].forEach(id => $(id).addEventListener('input', () => { $('preset').value = 'custom'; if (shape==='circle') $(id==='wmm'?'hmm':'wmm').value = $(id).value; settingsChanged(); }));
+  $('dpi').addEventListener('change', settingsChanged);
+  function settingsChanged(){ updatePxInfo(); items.forEach(it => clampState(it)); draw(); }
+
+  function setShape(v){
+    shape = v;
+    [...$('shapeSeg').children].forEach(b => b.classList.toggle('on', b.dataset.v === v));
+    if (v === 'circle' && $('wmm').value !== $('hmm').value){ $('hmm').value = $('wmm').value; $('preset').value = 'custom'; }
+    if (v === 'circle' && $('fmt').value === 'jpg') {/* jpg fills bg */}
+  }
+  $('shapeSeg').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; setShape(b.dataset.v); settingsChanged(); });
+  $('guides').addEventListener('change', draw);
+  $('cropSeg').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b || b.dataset.v === cropMode) return;
+    cropMode = b.dataset.v;
+    [...$('cropSeg').children].forEach(x => x.classList.toggle('on', x === b));
+    $('guideNote').textContent = cropMode === 'neck'
+      ? 'ガイド：上の線＝頭のてっぺん、楕円＝頭と顔、下の2本＝首。'
+      : 'ガイド：上の線＝頭のてっぺん、楕円＝顔、下端＝肩のライン。';
+    items.forEach(it => autoPlace(it, true)); draw();
+  });
+  $('bg').addEventListener('input', draw);
+
+  // ---------- geometry ----------
+  // State: zoom (1 = image just covers frame), ox/oy = image-center offset from frame center in frame-width units, rot in degrees.
+  function baseK(img){ return Math.max(1 / img.naturalWidth, aspect() / img.naturalHeight); } // frame-width units per image px
+  function clampState(it){
+    const s = it.st; s.zoom = Math.min(Math.max(s.zoom, 0.3), 12);
+  }
+  function frameRect(){
+    const W = stage.clientWidth, H = stage.clientHeight, r = aspect();
+    const pad = Math.min(48, Math.min(W, H) * 0.08);
+    let fw = W - pad * 2, fh = fw * r;
+    if (fh > H - pad * 2){ fh = H - pad * 2; fw = fh / r; }
+    return { x: (W - fw) / 2, y: (H - fh) / 2, w: fw, h: fh };
+  }
+  function drawImageTo(c, it, fx, fy, fw){
+    const img = it.img, s = it.st, r = aspect();
+    const k = baseK(img) * s.zoom * fw;
+    c.save();
+    c.translate(fx + fw / 2 + s.ox * fw, fy + fw * r / 2 + s.oy * fw);
+    c.rotate(s.rot * Math.PI / 180);
+    c.scale(k, k);
+    c.imageSmoothingQuality = 'high';
+    c.drawImage(img, -img.naturalWidth / 2, -img.naturalHeight / 2);
+    c.restore();
+  }
+  function shapePath(c, x, y, w, h){
+    c.beginPath();
+    if (shape === 'circle'){ c.ellipse(x + w/2, y + h/2, w/2, h/2, 0, 0, Math.PI*2); }
+    else if (shape === 'round'){ const rr = Math.min(w, h) * 0.08; c.roundRect ? c.roundRect(x, y, w, h, rr) : c.rect(x, y, w, h); }
+    else c.rect(x, y, w, h);
+  }
+
+  // ---------- stage drawing ----------
+  function resize(){
+    const dpr = window.devicePixelRatio || 1;
+    stage.width = Math.round(stage.clientWidth * dpr); stage.height = Math.round(stage.clientHeight * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    draw();
+  }
+  new ResizeObserver(resize).observe(wrap);
+
+  function draw(){
+    const W = stage.clientWidth, H = stage.clientHeight;
+    ctx.clearRect(0, 0, W, H);
+    const it = items[cur]; if (!it) return;
+    const f = frameRect();
+    // background color inside frame
+    ctx.fillStyle = $('bg').value; shapePath(ctx, f.x, f.y, f.w, f.h); ctx.fill();
+    drawImageTo(ctx, it, f.x, f.y, f.w);
+    // dim outside the plate shape
+    ctx.save();
+    ctx.beginPath(); ctx.rect(0, 0, W, H);
+    if (shape === 'circle') ctx.ellipse(f.x + f.w/2, f.y + f.h/2, f.w/2, f.h/2, 0, 0, Math.PI*2, true);
+    else if (shape === 'round' && ctx.roundRect){ const rr = Math.min(f.w,f.h)*0.08; ctx.moveTo(f.x, f.y+rr); ctx.roundRect(f.x, f.y, f.w, f.h, [rr]); }
+    else { ctx.moveTo(f.x, f.y); ctx.lineTo(f.x, f.y+f.h); ctx.lineTo(f.x+f.w, f.y+f.h); ctx.lineTo(f.x+f.w, f.y); ctx.closePath(); }
+    ctx.fillStyle = 'rgba(14,13,12,.72)'; ctx.fill('evenodd');
+    ctx.restore();
+    ctx.strokeStyle = 'rgba(255,255,255,.9)'; ctx.lineWidth = 1.5; shapePath(ctx, f.x, f.y, f.w, f.h); ctx.stroke();
+
+    if ($('guides').checked){
+      ctx.save();
+      ctx.setLineDash([6, 5]); ctx.lineWidth = 1.2; ctx.strokeStyle = 'rgba(253,186,116,.95)';
+      const FR = FRAMING[cropMode];
+      const top = f.y + f.h * FR.top, chin = f.y + f.h * FR.chin;
+      line(f.x + f.w*0.2, top, f.x + f.w*0.8, top);
+      // face oval
+      const cy = (top + chin) / 2, ry = (chin - top) / 2, rx = Math.min(ry * 0.74, f.w * FR.rxMax);
+      ctx.beginPath(); ctx.ellipse(f.x + f.w/2, cy, rx, ry, 0, 0, Math.PI*2); ctx.stroke();
+      // eye line & center
+      ctx.strokeStyle = 'rgba(253,186,116,.55)';
+      line(f.x + f.w/2 - rx*1.1, cy - ry*0.08, f.x + f.w/2 + rx*1.1, cy - ry*0.08);
+      line(f.x + f.w/2, f.y + 4, f.x + f.w/2, f.y + f.h - 4);
+      ctx.setLineDash([]); ctx.strokeStyle = 'rgba(253,186,116,.8)'; ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      if (cropMode === 'neck'){
+        // neck
+        const nx = rx * 0.42, ny0 = chin - ry * 0.12;
+        ctx.moveTo(f.x + f.w/2 - nx, ny0); ctx.lineTo(f.x + f.w/2 - nx * 1.05, f.y + f.h - 2);
+        ctx.moveTo(f.x + f.w/2 + nx, ny0); ctx.lineTo(f.x + f.w/2 + nx * 1.05, f.y + f.h - 2);
+        ctx.stroke(); ctx.restore();
+      } else {
+      // shoulders
+      const sy = f.y + f.h * 0.96, ny = chin + f.h * 0.06;
+      ctx.moveTo(f.x + f.w*0.04, sy); ctx.quadraticCurveTo(f.x + f.w*0.12, ny + f.h*0.06, f.x + f.w/2 - rx*0.55, ny);
+      ctx.moveTo(f.x + f.w*0.96, sy); ctx.quadraticCurveTo(f.x + f.w*0.88, ny + f.h*0.06, f.x + f.w/2 + rx*0.55, ny);
+      ctx.stroke();
+      ctx.restore();
+      }
+    }
+    const z = $('zoom'); z.value = Math.round(Math.log(it.st.zoom / 0.3) / Math.log(12 / 0.3) * 1000);
+    $('rot').value = it.st.rot; $('rotVal').textContent = it.st.rot + '°';
+  }
+  function line(a, b, c, d){ ctx.beginPath(); ctx.moveTo(a, b); ctx.lineTo(c, d); ctx.stroke(); }
+
+  // ---------- interaction ----------
+  const ptrs = new Map(); let last = null;
+  function zoomAt(px, py, factor){
+    const it = items[cur]; if (!it) return;
+    const f = frameRect(), s = it.st, r = aspect();
+    const nz = Math.min(Math.max(s.zoom * factor, 0.3), 12); factor = nz / s.zoom;
+    const fcx = f.x + f.w/2, fcy = f.y + f.w*r/2;
+    const cx = fcx + s.ox * f.w, cy = fcy + s.oy * f.w;
+    s.ox = (px + (cx - px) * factor - fcx) / f.w;
+    s.oy = (py + (cy - py) * factor - fcy) / f.w;
+    s.zoom = nz; it.done = false; draw();
+  }
+  stage.addEventListener('pointerdown', e => {
+    if (!items[cur]) return;
+    stage.setPointerCapture(e.pointerId); ptrs.set(e.pointerId, {x:e.offsetX, y:e.offsetY});
+    stage.classList.add('drag'); last = gesture();
+  });
+  stage.addEventListener('pointermove', e => {
+    if (!ptrs.has(e.pointerId)) return;
+    ptrs.set(e.pointerId, {x:e.offsetX, y:e.offsetY});
+    const g = gesture(), it = items[cur], f = frameRect();
+    if (last && g.n === last.n){
+      it.st.ox += (g.x - last.x) / f.w; it.st.oy += (g.y - last.y) / f.w; it.done = false;
+      if (g.n === 2 && last.d > 0){ zoomAt(g.x, g.y, g.d / last.d); } else draw();
+    }
+    last = g;
+  });
+  const up = e => { ptrs.delete(e.pointerId); last = ptrs.size ? gesture() : null; if (!ptrs.size) stage.classList.remove('drag'); };
+  stage.addEventListener('pointerup', up); stage.addEventListener('pointercancel', up);
+  function gesture(){
+    const p = [...ptrs.values()]; const n = p.length;
+    const x = p.reduce((a, q) => a + q.x, 0) / n, y = p.reduce((a, q) => a + q.y, 0) / n;
+    const d = n >= 2 ? Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y) : 0;
+    return {n, x, y, d};
+  }
+  stage.addEventListener('wheel', e => { e.preventDefault(); zoomAt(e.offsetX, e.offsetY, Math.exp(-e.deltaY * 0.0015)); }, {passive:false});
+  const centerZoom = fct => { const f = frameRect(); zoomAt(f.x + f.w/2, f.y + f.h/2, fct); };
+  $('zIn').onclick = () => centerZoom(1.1); $('zOut').onclick = () => centerZoom(1/1.1);
+  $('zoom').addEventListener('input', e => { const it = items[cur]; if (!it) return;
+    const nz = 0.3 * Math.pow(12 / 0.3, e.target.value / 1000); centerZoom(nz / it.st.zoom); });
+  $('rot').addEventListener('input', e => { const it = items[cur]; if (!it) return; it.st.rot = +e.target.value; it.done = false; draw(); });
+  window.addEventListener('keydown', e => {
+    if (!items[cur] || /INPUT|SELECT/.test(document.activeElement.tagName)) return;
+    const s = items[cur].st, step = e.shiftKey ? 0.02 : 0.005;
+    const map = {ArrowLeft:[-step,0], ArrowRight:[step,0], ArrowUp:[0,-step], ArrowDown:[0,step]};
+    if (map[e.key]){ s.ox += map[e.key][0]; s.oy += map[e.key][1]; e.preventDefault(); draw(); }
+    else if (e.key === '+' || e.key === '=') centerZoom(1.05);
+    else if (e.key === '-') centerZoom(1/1.05);
+  });
+  $('resetBtn').onclick = () => { const it = items[cur]; if (!it) return; it.st = {zoom:1, ox:0, oy:0, rot:0}; draw(); };
+
+  // ---------- auto face detection ----------
+  const inClaude = () => !!window.claude || /claude|anthropic/i.test(location.hostname);
+  const canMP = () => !native && !inClaude();
+  const hasFD = native || 'FaceDetector' in window || canMP();
+  // MediaPipe face detector (used on iPhone/Safari and anywhere without a built-in detector)
+  const MP_VER = '0.10.14';
+  let mpDet = null;
+  function loadMP(){
+    if (mpDet) return mpDet;
+    mpDet = (async () => {
+      const v = await import(`https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@${MP_VER}/vision_bundle.mjs`);
+      const fs = await v.FilesetResolver.forVisionTasks(`https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@${MP_VER}/wasm`);
+      return await v.FaceDetector.createFromOptions(fs, {
+        baseOptions: { modelAssetPath: 'https://storage.googleapis.com/mediapipe-models/face_detector/blaze_face_short_range/float16/1/blaze_face_short_range.tflite', delegate: 'CPU' },
+        runningMode: 'IMAGE', minDetectionConfidence: 0.4 });
+    })();
+    mpDet.catch(() => { mpDet = null; });
+    return mpDet;
+  }
+  async function detectMP(img){
+    const det = await loadMP();
+    // the short-range model works best when the face fills a good part of the frame, so also try the upper-center area
+    const tries = [null, {x:0.15, y:0, w:0.7, h:0.7}];
+    for (const t of tries){
+      const W = img.naturalWidth, H = img.naturalHeight;
+      let src = img, ox = 0, oy = 0, sc = 1;
+      if (t){
+        const c = document.createElement('canvas'); ox = W*t.x; oy = H*t.y;
+        c.width = Math.round(W*t.w); c.height = Math.round(H*t.h);
+        c.getContext('2d').drawImage(img, ox, oy, c.width, c.height, 0, 0, c.width, c.height); src = c;
+      }
+      const r = det.detect(src);
+      const d = (r && r.detections || []).map(x => x.boundingBox).filter(Boolean);
+      if (d.length) return d.map(b => ({boundingBox:{x: ox + b.originX*sc, y: oy + b.originY*sc, width: b.width*sc, height: b.height*sc}}));
+    }
+    return [];
+  }
+  $('autoNote').textContent = hasFD ? '' : 'このブラウザは顔の自動検出に未対応です。写真を取り込むと、上寄りに自動配置します。ドラッグで微調整してください。';
+  async function detectFaces(img){
+    if (native){
+      const W = img.naturalWidth, H = img.naturalHeight, sc = Math.min(1, 1600 / Math.max(W, H));
+      const c = document.createElement('canvas'); c.width = Math.round(W * sc); c.height = Math.round(H * sc);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      const b64 = c.toDataURL('image/jpeg', 0.9).split(',')[1];
+      const res = await callNative('detect', {b64});
+      // Vision: normalized, origin bottom-left
+      return (res && res.faces || []).map(f => ({boundingBox:{x:f.x*W, y:(1 - f.y - f.h)*H, width:f.w*W, height:f.h*H}}));
+    }
+    if ('FaceDetector' in window){
+      try { const f = await new FaceDetector({fastMode:false, maxDetectedFaces:5}).detect(img); if (f.length || !canMP()) return f; } catch (e) { if (!canMP()) throw e; }
+    }
+    return await detectMP(img);
+  }
+  async function autoPlace(it, quiet){
+    const r = aspect(), img = it.img;
+    if (hasFD){
+      try{
+        const faces = await detectFaces(img);
+        if (faces.length){
+          const b = faces.sort((a, c) => c.boundingBox.width*c.boundingBox.height - a.boundingBox.width*a.boundingBox.height)[0].boundingBox;
+          const FR = FRAMING[cropMode], k = FR.faceH * r / b.height;   // face box height as share of plate
+          const dx = b.x + b.width/2 - img.naturalWidth/2, dy = b.y + b.height/2 - img.naturalHeight/2;
+          it.st = { zoom: k / baseK(img), ox: -dx * k, oy: FR.faceCY * r - dy * k - r/2, rot: 0 };
+          clampState(it); if (it === items[cur]) draw();
+          if (!quiet) toast('顔を検出して配置しました');
+          return true;
+        }
+      }catch(err){ /* fall through */ }
+    }
+    // fallback: portrait photos usually have the head in the upper part
+    const portrait = img.naturalHeight > img.naturalWidth * 1.05;
+    const nk = cropMode === 'neck';
+    it.st = { zoom: (portrait ? 1.6 : 1.4) * (nk ? 1.35 : 1), ox: 0, oy: (portrait ? 0.22 : 0.05) * r * (nk ? 1.5 : 1), rot: 0 };
+    if (it === items[cur]) draw();
+    if (!quiet) toast(hasFD ? '顔が見つかりませんでした。手動で合わせてください' : '自動検出に未対応のため、おおよその位置に配置しました');
+    return false;
+  }
+  $('autoBtn').onclick = () => { if (items[cur]) autoPlace(items[cur], false); };
+
+  // ---------- loading ----------
+  let firstNew = 0;
+  // ---------- year from photo metadata ----------
+  const THIS_YEAR = new Date().getFullYear();
+  const MIN_YEAR = 2000; // earlier than this is treated as a wrong camera clock
+  function pickYear(y){
+    y = parseInt(y, 10);
+    if (y >= MIN_YEAR && y <= THIS_YEAR) return {year: y, src: 'meta'};
+    return {year: THIS_YEAR, src: isNaN(y) ? 'none' : 'odd', raw: y};
+  }
+  // Scan the first part of the file for EXIF-style dates "YYYY:MM:DD HH:MM:SS"; the earliest one is the shooting date
+  async function yearFromFile(f){
+    try{
+      // HEIC keeps its Exif block inside the image data, so scan more of the file
+      const lim = isHeic(f) ? 40 * 1024 * 1024 : 1024 * 1024;
+      const buf = new Uint8Array(await f.slice(0, lim).arrayBuffer());
+      let txt = ''; for (let i = 0; i < buf.length; i += 8192) txt += String.fromCharCode.apply(null, buf.subarray(i, i + 8192));
+      const ys = [...txt.matchAll(/((?:19|20)\d\d):[01]\d:[0-3]\d [0-2]\d:[0-5]\d:[0-5]\d/g)].map(m => +m[1]);
+      return ys.length ? Math.min(...ys) : null;
+    }catch(e){ return null; }
+  }
+  // ---------- HEIC (iPhone photos) ----------
+  const isHeic = f => /image\/hei[cf]/i.test(f.type || '') || /\.(heic|heif)$/i.test(f.name || '');
+  let heicLib = null;
+  function loadHeicLib(){
+    if (window.heic2any) return Promise.resolve(window.heic2any);
+    if (heicLib) return heicLib;
+    const srcs = ['https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js',
+                  'https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.js',
+                  'https://unpkg.com/heic2any@0.0.4/dist/heic2any.min.js',
+                  'https://unpkg.com/heic2any@0.0.4/dist/heic2any.js'];
+    heicLib = new Promise((res, rej) => {
+      const tryNext = i => {
+        if (i >= srcs.length){ heicLib = null; rej(new Error('HEIC 変換部品を読み込めませんでした（インターネット接続を確認してください）')); return; }
+        const sc = document.createElement('script'); sc.src = srcs[i];
+        sc.onload = () => window.heic2any ? res(window.heic2any) : tryNext(i + 1);
+        sc.onerror = () => { sc.remove(); tryNext(i + 1); };
+        document.head.appendChild(sc);
+      };
+      tryNext(0);
+    });
+    return heicLib;
+  }
+  async function heicToJpegUrl(file){
+    const conv = await loadHeicLib();
+    let out = await conv({blob: file, toType: 'image/jpeg', quality: 0.95});
+    if (Array.isArray(out)) out = out[0];
+    return URL.createObjectURL(out);
+  }
+
+  function addSrc(name, url, metaYear, heicFile){
+    const img = new Image();
+    const y = pickYear(metaYear);
+    const it = { name: String(name).replace(/\.[^.]+$/, '') || 'photo', person: '', year: y.year, yearSrc: y.src, yearRaw: y.raw,
+                 img, url, st:{zoom:1, ox:0, oy:0, rot:0}, done:false };
+    img.onload = async () => { items.push(it); renderStrip(); if (cur < 0 || items.length - 1 === firstNew) select(items.length - 1); await autoPlace(it, true); };
+    img.onerror = async () => {
+      // This browser can't show HEIC directly (e.g. Windows / Edge): convert it to JPEG and retry
+      if (heicFile && !it.converted){
+        it.converted = true; toast(`${name} を変換しています…`);
+        try { URL.revokeObjectURL(url); it.url = await heicToJpegUrl(heicFile); img.src = it.url; return; }
+        catch (e) { toast(`${name} を変換できませんでした：${e.message || e}`); return; }
+      }
+      toast(`${name} を読み込めませんでした`);
+    };
+    img.src = url;
+  }
+  function addFiles(files){
+    const list = [...files].filter(f => f.type.startsWith('image/') || /\.(heic|heif)$/i.test(f.name));
+    if (!list.length) return;
+    firstNew = items.length;
+    list.forEach(async f => addSrc(f.name, URL.createObjectURL(f), await yearFromFile(f), isHeic(f) ? f : null));
+  }
+  $('file').addEventListener('change', e => { addFiles(e.target.files); e.target.value = ''; });
+  $('pickBtn').onclick = $('addBtn').onclick = () => { if (native){ firstNew = items.length; callNative('open'); } else $('file').click(); };
+  ['dragenter','dragover'].forEach(t => document.addEventListener(t, e => { e.preventDefault(); wrap.classList.add('over'); }));
+  ['dragleave','drop'].forEach(t => document.addEventListener(t, e => { e.preventDefault(); if (t==='drop' || e.target===document.documentElement) wrap.classList.remove('over'); }));
+  document.addEventListener('drop', e => { wrap.classList.remove('over'); if (e.dataTransfer) addFiles(e.dataTransfer.files); });
+  document.addEventListener('paste', e => { const fs = [...(e.clipboardData?.items || [])].filter(i => i.kind === 'file').map(i => i.getAsFile()); if (fs.length) addFiles(fs); });
+
+  function select(i){
+    cur = i; $('empty').classList.toggle('hidden', cur >= 0);
+    $('saveBtn').disabled = cur < 0; $('saveAllBtn').disabled = items.length < 1;
+    renderStrip(); draw(); showName();
+  }
+  function showName(){
+    const it = items[cur];
+    $('person').disabled = $('year').disabled = !it;
+    if (!it){ $('person').value = ''; $('year').value = ''; $('yearNote').textContent = ''; $('fnPreview').textContent = '—'; return; }
+    if (document.activeElement !== $('person')) $('person').value = it.person;
+    if (document.activeElement !== $('year')) $('year').value = it.year;
+    $('yearNote').textContent =
+      it.yearSrc === 'meta' ? '年：写真の撮影日から' :
+      it.yearSrc === 'odd'  ? `年：撮影日が ${it.yearRaw} 年になっていたため、今年にしました` :
+      it.yearSrc === 'edit' ? '年：手入力' : '年：撮影日の情報がないため、今年にしました';
+    $('fnPreview').textContent = fname(it);
+  }
+  $('person').addEventListener('input', e => { const it = items[cur]; if (!it) return; it.person = e.target.value; it.done = false; showName(); renderStrip(); });
+  $('person').addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.isComposing && e.keyCode !== 229){ e.preventDefault(); if (cur < items.length - 1){ select(cur + 1); $('person').focus(); $('person').select(); } else $('person').blur(); }
+  });
+  $('year').addEventListener('input', e => { const it = items[cur]; if (!it) return; const y = parseInt(e.target.value, 10); if (y > 1900 && y < 2200){ it.year = y; it.yearSrc = 'edit'; } showName(); });
+  $('fmt').addEventListener('change', () => showName());
+  function renderStrip(){
+    const strip = $('strip'); [...strip.querySelectorAll('.thumb')].forEach(n => n.remove());
+    items.forEach((it, i) => {
+      const d = document.createElement('div'); d.className = 'thumb' + (i === cur ? ' on' : '');
+      d.innerHTML = `<img alt="">${it.person ? '<span class="nm"></span>' : ''}<button class="x" title="削除">✕</button>${it.done ? '<span class="done">保存済</span>' : ''}`;
+      if (it.person) d.querySelector('.nm').textContent = it.person;
+      d.title = fname(it);
+      d.querySelector('img').src = it.url;
+      d.onclick = e => { if (e.target.classList.contains('x')){ URL.revokeObjectURL(it.url); items.splice(i, 1); select(Math.min(cur, items.length - 1)); } else select(i); };
+      strip.insertBefore(d, $('addBtn'));
+    });
+    $('saveAllBtn').disabled = items.length < 1;
+  }
+
+  // ---------- export ----------
+  function render(it){
+    const o = outSize(), c = document.createElement('canvas'); c.width = o.w; c.height = o.h;
+    const x = c.getContext('2d'), jpg = $('fmt').value === 'jpg';
+    if (jpg || shape === 'rect'){ x.fillStyle = $('bg').value; x.fillRect(0, 0, o.w, o.h); }
+    x.save(); shapePath(x, 0, 0, o.w, o.h); x.clip();
+    x.fillStyle = $('bg').value; x.fillRect(0, 0, o.w, o.h);
+    drawImageTo(x, it, 0, 0, o.w);
+    x.restore();
+    return new Promise(res => c.toBlob(res, jpg ? 'image/jpeg' : 'image/png', 0.95));
+  }
+  const ext = () => $('fmt').value === 'jpg' ? 'jpg' : 'png';
+  const safe = t => String(t).replace(/[\/\\:*?"<>|\u0000-\u001f]/g, '').replace(/\s+/g, ' ').trim();
+  const baseName = it => { const p = safe(it.person); return p ? `${it.year}-${p}` : `${it.year}-${safe(it.name) || 'photo'}`; };
+  const fname = it => `${baseName(it)}.${ext()}`;
+
+  // ---------- iPhone / iPad / Android: share sheet ("画像を保存" / "ファイルに保存") ----------
+  const isMobileShare = () => !native && !inClaude() && !!navigator.canShare &&
+    (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1));
+  const mimeOf = n => /\.jpe?g$/i.test(n) ? 'image/jpeg' : /\.zip$/i.test(n) ? 'application/zip' : 'image/png';
+  function shareViaButton(files){
+    return new Promise(res => {
+      $('shareMsg').textContent = files.length > 1 ? `${files.length}枚の画像ができました` : `「${files[0].name}」ができました`;
+      $('shareModal').classList.add('show');
+      $('shareGo').onclick = async () => {
+        $('shareModal').classList.remove('show');
+        try { await navigator.share({files}); res(true); } catch (e) { res(e.name === 'AbortError' ? false : null); }
+      };
+      $('shareCancel').onclick = () => { $('shareModal').classList.remove('show'); res(false); };
+    });
+  }
+  // returns true (shared), false (cancelled) or null (sharing not possible here)
+  async function shareFiles(files, direct){
+    try { if (!navigator.canShare({files})) return null; } catch (e) { return null; }
+    if (!direct) return shareViaButton(files);
+    try { await navigator.share({files}); return true; }
+    catch (e) {
+      if (e.name === 'AbortError') return false;
+      if (e.name === 'NotAllowedError') return shareViaButton(files); // tap expired while rendering: ask for one more tap
+      return null;
+    }
+  }
+
+  async function offer(filename, blob){
+    if (isMobileShare()){
+      const r = await shareFiles([new File([blob], filename, {type: mimeOf(filename)})], true);
+      if (r === true){ toast('保存しました'); return true; }
+      if (r === false){ toast('保存をキャンセルしました'); return false; }
+    }
+    if (native){
+      const r = await callNative('save', {name: filename, b64: await blobToB64(blob)});
+      toast(r && r.ok ? '保存しました' : '保存をキャンセルしました'); return !!(r && r.ok);
+    }
+    if (!window.claude && window.showSaveFilePicker){ // Edge / Chrome desktop: real "save as" dialog
+      try {
+        const e2 = filename.split('.').pop().toLowerCase();
+        const mime = e2 === 'zip' ? 'application/zip' : e2 === 'jpg' ? 'image/jpeg' : 'image/png';
+        const h = await window.showSaveFilePicker({suggestedName: filename, id: 'faceplate-out',
+          types: [{description: e2 === 'zip' ? 'ZIP ファイル' : '画像', accept: {[mime]: ['.' + e2]}}]});
+        const w = await h.createWritable(); await w.write(blob); await w.close();
+        toast('保存しました'); return true;
+      } catch (e) { if (e.name === 'AbortError') { toast('保存をキャンセルしました'); return false; } /* else fall back to download */ }
+    }
+    if (!window.claude){ // plain browser: normal download
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = filename;
+      document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+      return true;
+    }
+    if (downloads){
+      try{ await downloads.save({filename, data: blob}); toast('保存しました'); return true; }
+      catch(err){ if (err && err.code === 'declined') { toast('保存をキャンセルしました'); return false; } if (err && err.code === 'rate_limited'){ toast('少し待ってからもう一度お試しください'); return false; } }
+    }
+    if (blob.type.startsWith('image/')){
+      $('modalImg').src = URL.createObjectURL(blob); $('modal').classList.add('show'); return true;
+    }
+    toast('この表示では ZIP を保存できません。1枚ずつ保存してください'); return false;
+  }
+  $('modalClose').onclick = () => $('modal').classList.remove('show');
+
+  $('saveBtn').onclick = async () => {
+    const it = items[cur]; if (!it) return;
+    const blob = await render(it);
+    if (await offer(fname(it), blob)){ it.done = true; renderStrip(); }
+  };
+  $('saveAllBtn').onclick = async () => {
+    if (!items.length) return;
+    // Desktop browser (Windows app / Edge / Chrome): pick a folder first (needs the click's user activation)
+    if (isMobileShare()){
+      $('saveAllBtn').disabled = true; toast('書き出し中…');
+      const list = [], used = new Set();
+      for (const it of items){
+        let n = fname(it), k = 2; while (used.has(n)) n = `${baseName(it)}_${k++}.${ext()}`; used.add(n);
+        list.push(new File([await render(it)], n, {type: mimeOf(n)}));
+      }
+      $('saveAllBtn').disabled = false;
+      const r = await shareFiles(list, false);
+      if (r === true){ items.forEach(it => it.done = true); renderStrip(); toast('保存しました'); return; }
+      if (r === false){ toast('保存をキャンセルしました'); return; }
+      // sharing unavailable: fall through to ZIP download
+    }
+    if (!native && !window.claude && window.showDirectoryPicker){
+      let dir;
+      try { dir = await window.showDirectoryPicker({mode: 'readwrite', id: 'faceplate-out'}); }
+      catch (e) { if (e.name === 'AbortError') { toast('保存をキャンセルしました'); return; } dir = null; }
+      if (dir){
+        $('saveAllBtn').disabled = true; toast('書き出し中…');
+        const exists = async n => { try { await dir.getFileHandle(n); return true; } catch (e) { return false; } };
+        let count = 0;
+        try {
+          for (const it of items){
+            let n = fname(it), k = 2; while (await exists(n)) n = `${baseName(it)}_${k++}.${ext()}`;
+            const w = await (await dir.getFileHandle(n, {create: true})).createWritable();
+            await w.write(await render(it)); await w.close(); it.done = true; count++;
+          }
+          toast(`${count}枚をフォルダに保存しました`);
+        } catch (e) { toast('保存中にエラーが起きました：' + e.message); }
+        renderStrip(); $('saveAllBtn').disabled = false; return;
+      }
+    }
+    $('saveAllBtn').disabled = true; toast('書き出し中…');
+    const files = [], used = new Set();
+    for (const it of items){
+      let n = fname(it), k = 2; while (used.has(n)) n = `${baseName(it)}_${k++}.${ext()}`; used.add(n);
+      const blob = await render(it);
+      files.push(native ? {name:n, b64: await blobToB64(blob)} : {name:n, data:new Uint8Array(await blob.arrayBuffer())});
+    }
+    let ok;
+    if (native){
+      const r = await callNative('saveMany', {files});
+      ok = !!(r && r.ok); toast(ok ? `${r.count}枚をフォルダに保存しました` : '保存をキャンセルしました');
+    } else ok = await offer(`face_plates_${files.length}枚.zip`, makeZip(files));
+    if (ok) { items.forEach(it => it.done = true); renderStrip(); }
+    $('saveAllBtn').disabled = false;
+  };
+
+  // minimal ZIP (store, no compression)
+  const crcT = (() => { const t = new Uint32Array(256); for (let n = 0; n < 256; n++){ let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; } return t; })();
+  const crc32 = d => { let c = 0xFFFFFFFF; for (let i = 0; i < d.length; i++) c = crcT[(c ^ d[i]) & 255] ^ (c >>> 8); return (c ^ 0xFFFFFFFF) >>> 0; };
+  function makeZip(files){
+    const enc = new TextEncoder(), parts = [], central = []; let off = 0;
+    const now = new Date(), dt = ((now.getHours() << 11) | (now.getMinutes() << 5) | (now.getSeconds() >> 1)), dd = (((now.getFullYear() - 1980) << 9) | ((now.getMonth() + 1) << 5) | now.getDate());
+    for (const f of files){
+      const nm = enc.encode(f.name), crc = crc32(f.data), sz = f.data.length;
+      const h = new DataView(new ArrayBuffer(30));
+      h.setUint32(0, 0x04034b50, true); h.setUint16(4, 20, true); h.setUint16(6, 0x0800, true); h.setUint16(8, 0, true);
+      h.setUint16(10, dt, true); h.setUint16(12, dd, true); h.setUint32(14, crc, true); h.setUint32(18, sz, true); h.setUint32(22, sz, true);
+      h.setUint16(26, nm.length, true); h.setUint16(28, 0, true);
+      parts.push(h, nm, f.data);
+      const c = new DataView(new ArrayBuffer(46));
+      c.setUint32(0, 0x02014b50, true); c.setUint16(4, 20, true); c.setUint16(6, 20, true); c.setUint16(8, 0x0800, true); c.setUint16(10, 0, true);
+      c.setUint16(12, dt, true); c.setUint16(14, dd, true); c.setUint32(16, crc, true); c.setUint32(20, sz, true); c.setUint32(24, sz, true);
+      c.setUint16(28, nm.length, true); c.setUint32(42, off, true);
+      central.push(c, nm);
+      off += 30 + nm.length + sz;
+    }
+    const cs = central.reduce((a, p) => a + p.byteLength, 0);
+    const e = new DataView(new ArrayBuffer(22));
+    e.setUint32(0, 0x06054b50, true); e.setUint16(8, files.length, true); e.setUint16(10, files.length, true); e.setUint32(12, cs, true); e.setUint32(16, off, true);
+    return new Blob([...parts, ...central, e], {type:'application/zip'});
+  }
+
+  let tt; function toast(m){ const t = $('toast'); t.textContent = m; t.classList.add('show'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('show'), 2200); }
+
+  updatePxInfo(); select(-1);
+  if ('serviceWorker' in navigator && /\.github\.io$/i.test(location.hostname)) {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  }
+  if (isMobileShare()) $('saveAllBtn').textContent = '全部まとめて保存';
+  if (isMobileShare()) $('saveBtn').textContent = 'この写真を保存';
+  if (native || (!window.claude && window.showDirectoryPicker)) $('saveAllBtn').textContent = '全部まとめて保存（フォルダを選ぶ）';
+  if (window.claude && claude.use){
+    claude.use('downloads').then(d => { downloads = d; if (!d) $('saveNote').textContent = 'この表示では直接保存できないため、書き出した画像を長押し／右クリックで保存します。'; }).catch(() => {});
+  }
+})();
+</script>
+</body>
+</html>
